@@ -13,6 +13,27 @@ const config: Config = {
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      screens: {
+        xs: "320px",
+        sm: "375px",
+        sml: "500px",
+        md: "667px",
+        mdl: "768px",
+        lg: "960px",
+        lgl: "1024px",
+        xl: "1280px",
+      },
+      colors: {
+        flipkart_blue: "#2874f0",
+        flipkart_light: "#ffffff",
+        flipkart_yellow: "#ff9f00",
+        flipkart_yellow2: "#f2de0f",
+        flipkart_orange: "#fb641b",
+        lightText: "#ccc",
+      },
+      fontFamily: {
+        bodyFont: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],
