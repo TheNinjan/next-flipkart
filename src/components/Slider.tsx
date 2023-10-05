@@ -12,7 +12,7 @@ const Slider = ({ product }: any) => {
           <Link href="/catogary">
             <div className="p-1 min-w-[13rem] h-[20rem]  justify-center items-center shadow-sm relative">
               <Image
-                className=" mt-5 hover:scale-110 duration-300"
+                className=" mt-5 hover:scale-110 duration-300  "
                 src={item.image}
                 width={200}
                 height={200}

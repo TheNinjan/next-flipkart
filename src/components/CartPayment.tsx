@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { StateProps, StoreProduct } from "../../types.td";
-import { loadStripe } from "@stripe/stripe-js";
-import { useSession } from "next-auth/react";
 import FormattedPrice from "./FormattedPrice";
 
 const CartPayment = () => {

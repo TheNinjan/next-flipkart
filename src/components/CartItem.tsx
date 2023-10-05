@@ -79,12 +79,12 @@ const CartItem = ({ item }: any) => {
         <div className="flex flex-col gap-1">
           <p className="text-lg font-semibold ">{item.title}</p>
           <p className="text-sm text-gray-600">{item.description}</p>
-          <p className="text-sm text-gray-600">
+          <div className="text-sm text-gray-600">
             Unit Price{" "}
             <span className="font-semibold ">
               <FormattedPrice amount={item.price} />
             </span>
-          </p>
+          </div>
           <div className="flex items-center gap-6">
             <div className="flex  items-center  gap-2 text-sm font-medium text-black hover:text-flipkart_blue cursor-pointer duration-500">
               <span>SAVE FOR LATER</span>

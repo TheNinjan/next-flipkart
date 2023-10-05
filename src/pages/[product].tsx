@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-// import product from "@/Images/electronics/4trimmer.webp";
 import FAssured from "@/Images/FAssured.png";
 import { AiFillHeart, AiFillStar } from "react-icons/ai";
 import { IoIosShareAlt } from "react-icons/io";
@@ -10,20 +9,13 @@ import Suggetions from "@/components/Suggetions";
 import { useRouter } from "next/router";
 import { wholedata } from "@/constant/wholedata";
 import { Product } from "../../types.td";
-import { category } from "@/constant/category";
 import { addToCart } from "@/store/nextSlice";
-import image from "next/image";
-import { title } from "process";
 import { useDispatch } from "react-redux";
-
-// {item}:Item
 
 const Product = () => {
   const router = useRouter();
   const id: any = router.query.data;
-  // console.log(id);
-  let productItem: Product[] = wholedata.filter((item) => item._id == id);
-  // console.log(productItem);
+  const productItem: Product[] = wholedata.filter((item) => item._id == id);
   const dispatch = useDispatch();
   return (
     <div className=" w-full mt-1  bg-white">
