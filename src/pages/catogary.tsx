@@ -6,7 +6,7 @@ import CategoryImg from "@/Images/bestOf/electronics.png";
 import RangeSlider from "@/components/DragInput";
 import CartProduct from "@/components/best/CartProduct";
 
-const catogary = ({ items }: any) => {
+const catogary = () => {
   return (
     <div className="w-full flex h-full p-2 m-2">
       <div className="w-[20%]  h-full">

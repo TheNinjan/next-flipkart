@@ -10,7 +10,7 @@ const Slider2 = ({ product }: any) => {
     <Swiper spaceBetween={5} slidesPerView={6} navigation={true}>
       {product.map((item: any) => (
         <SwiperSlide key={item._id}>
-          <Link href="/product">
+          <Link href={`/product?data=${item._id}`}>
             <div className="p-1 min-w-[13rem] h-[20rem]  justify-center items-center shadow-sm relative">
               <Image
                 className=" mt-5 hover:scale-110 duration-300"

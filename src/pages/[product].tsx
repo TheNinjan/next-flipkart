@@ -10,15 +10,21 @@ import Suggetions from "@/components/Suggetions";
 import { useRouter } from "next/router";
 import { wholedata } from "@/constant/wholedata";
 import { Product } from "../../types.td";
+import { category } from "@/constant/category";
+import { addToCart } from "@/store/nextSlice";
+import image from "next/image";
+import { title } from "process";
+import { useDispatch } from "react-redux";
 
 // {item}:Item
 
 const Product = () => {
   const router = useRouter();
   const id: any = router.query.data;
-  console.log(id);
+  // console.log(id);
   let productItem: Product[] = wholedata.filter((item) => item._id == id);
-  console.log(productItem);
+  // console.log(productItem);
+  const dispatch = useDispatch();
   return (
     <div className=" w-full mt-1  bg-white">
       <div className="flex h-50rem] p-5 sticky">
@@ -73,7 +79,25 @@ const Product = () => {
             alt="ietem"
           />
           <div className="flex  justify-center gap-5 mt-5">
-            <button className="w-60 h-14 text-white font-bold bg-[#ff9f00]  rounded-md">
+            <button
+              onClick={() =>
+                dispatch(
+                  addToCart({
+                    _id: productItem[0]._id,
+                    brand: productItem[0].brand,
+                    category: productItem[0].category,
+                    description: productItem[0].description,
+                    image: productItem[0].image,
+                    isNew: productItem[0].isNew,
+                    oldPrice: productItem[0].oldPrice,
+                    price: productItem[0].price,
+                    title: productItem[0].title,
+                    quantity: 1,
+                  })
+                )
+              }
+              className="w-60 h-14 text-white font-bold bg-[#ff9f00]  rounded-md"
+            >
               ADD TO CART
             </button>
             <button className="w-60 h-14 text-white font-bold bg-[#fb641b] rounded-md ">

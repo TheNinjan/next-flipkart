@@ -1,8 +1,8 @@
 import React from "react";
-import { beautyData } from "@/constant/beaty";
 import Offer from "@/Images/offer/travel.png";
 import Image from "next/image";
 import Slider2 from "./Slider2";
+import { wholedata } from "@/constant/wholedata";
 const Suggetions = () => {
   return (
     <div className="bg-white mt-2 h-[25rem]">
@@ -17,7 +17,7 @@ const Suggetions = () => {
       <div className="w-full h-[20rem] border-t-2">
         <div className="flex   ">
           <Image src={Offer} width={200} height={150} alt="Offer" />
-          <Slider2 product={beautyData} />
+          <Slider2 product={wholedata} />
         </div>
       </div>
     </div>

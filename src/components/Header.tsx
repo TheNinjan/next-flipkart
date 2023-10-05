@@ -142,8 +142,11 @@ const Header = () => {
               className="text-white cursor-pointer gap-2 p-2 w-full h-full flex"
             >
               <HiShoppingCart className="mt-1" />
-              <span className="flex items-center justify-center cursor-pointer font-bold">
+              <p className="flex items-center justify-center cursor-pointer font-bold">
                 Cart
+              </p>
+              <span className="absolute text-white text-sm top-1 bg-red-500 w-4 text-center rounded-md right-[175px] font-semibold ">
+                {productData ? productData.length : 0}
               </span>
             </Link>
           </div>

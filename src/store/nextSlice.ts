@@ -20,14 +20,14 @@ export const nextSlice=createSlice({
     reducers:{
 
         addToCart:(state,action)=>{
-            const existingProduct=state.productData.find((item:StoreProduct)=>item._id===action.payload);
-            {
-                if(existingProduct){
-                        existingProduct.quantity++
-                }
-                else{
-                    state.productData.push(action.payload)
-                }
+            const existingProduct =state.productData.find((item:StoreProduct)=>item._id==action.payload._id);
+            console.log('existingProduct',existingProduct)
+            console.log(action.payload)
+            if(existingProduct){
+                existingProduct.quantity++
+            }
+            else{
+                state.productData.push(action.payload)
             }
         },
         removeFromCart:(state,action)=>{
@@ -37,30 +37,30 @@ export const nextSlice=createSlice({
             state.productData = [];
           },
         increaseQuantity:(state,action)=>{
-            const existingProduct=state.productData.find((item:StoreProduct)=>{
-                item._id===action.payload._id;
-            })
-            existingProduct&&existingProduct.quantity++
+            const existingProduct = state.productData.find(
+                (item: StoreProduct) => item._id === action.payload._id
+              );
+              existingProduct && existingProduct.quantity++;
         },
         decreaseQuantity:(state,action)=>{
-            const existingProduct=state.productData.find((item:StoreProduct)=>{
-                item._id===action.payload._id;
-            })
-            if(existingProduct?.quantity===1){
-                existingProduct.quantity=1
-            }
-            else{
+            const existingProduct = state.productData.find(
+                (item: StoreProduct) => item._id === action.payload._id
+              );
+              if (existingProduct?.quantity === 1) {
+                existingProduct.quantity = 1;
+              } else {
                 existingProduct!.quantity--;
-            }
+              }
         },
         addToFavorite:(state,action)=>{
-            const existingProduct=state.favouriteData.find((item:StoreProduct)=>item._id===action.payload._id)
-            if(existingProduct){
-                existingProduct.quantity+=action.payload.quantity
-            }
-            else{
-                state.favouriteData.push(action.payload)
-            }
+            const existingProduct = state.favouriteData.find(
+                (item: StoreProduct) => item._id === action.payload._id
+              );
+              if (existingProduct) {
+                existingProduct.quantity += action.payload.quantity;
+              } else {
+                state.favouriteData.push(action.payload);
+              }
 
         },
         removeFromFavourite:(state)=>{
